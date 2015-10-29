@@ -1,4 +1,4 @@
-# Presentation-ResponsiveTables=
+# Presentation-ResponsiveTables
 
 ## Quick Ideas
 - How do basic tables work (define terminology)
