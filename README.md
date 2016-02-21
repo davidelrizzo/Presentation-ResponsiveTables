@@ -1,6 +1,5 @@
 # Presentation-ResponsiveTables
 
-## Quick Ideas
 - How do basic tables work (define terminology)
 - How do tables behave with screenreaders (Data vs Layout tables)
 - Responsive row tables (with cell headings)
