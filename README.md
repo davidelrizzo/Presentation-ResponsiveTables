@@ -1,10 +1,5 @@
-# Presentation-ResponsiveTables
+# Responsive Tables - A magical journey
 
-- How do basic tables work (define terminology)
-- How do tables behave with screenreaders (Data vs Layout tables)
-- Responsive row tables (with cell headings)
-- Responsive colum tables
-  - flex table (accessible, with column collapse)
-  - collapsing to tabs & accordions
-  - styling and striping on top of all of this
-- Ultimate layout tables
+What looks like a table, is laid out like a table, but isn't a table? Table markup isn't as accessible as you'd think and collapsing by columns is surprisingly difficult. How can we get layout like tables with accessibility and responsiveness? 
+
+Flexbox of course!
