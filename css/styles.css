@@ -17,13 +17,48 @@
 }
 
 .reveal h1 { font-size: 3em; }
-.reveal .muted { opacity:0.5; }
-
 .reveal small { vertical-align: baseline; }
+.reveal code {
+	display: inline-block;
+  padding: 0 0.2em;
+  border-radius: 0.2em;
+  font-style: normal;
+  background: rgba(255,255,255,0.1);
+  opacity: 0.5;
+}
+.reveal li { padding-bottom: 0.5em; }
+
+
+
+/* EXAMPLES */
+.reveal .frameWrapper {
+	position: relative;
+	background: rgba(0,0,0,0.3); 
+	/*border: solid 3px black;*/
+}
+.reveal iframe { 
+	/*position: absolute;
+	top: 0; left: 0;
+	height: 100%; width: 100%;
+	max-width: 100%; max-height: 100%;*/
+	background: rgba(255,255,255,0.8); 
+}
+
 
 
 
 /* CUSTOM */
+.reveal .muted { color: rgba(255,255,255,0.5) }
+/*color: rgba(231,173,82,0.6)*/
+.reveal .highlight {
+  color: #664e1a;
+  /*font-style: italic;
+  opacity: 0.7;
+*/}
+.reveal .flat-highlight {
+  color: #664e1a;
+  opacity: 0.7;
+}
 
 .reveal .barList {
   margin: 0;
@@ -37,7 +72,7 @@
  }
 .reveal .barList li:last-child { border: none; }
 
-.reveal .brandLogo {
+.reveal .sunLogo {
   display: inline;
   vertical-align: middle;
   width: 10%;

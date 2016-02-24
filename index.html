@@ -61,7 +61,7 @@
 					</p>
 					<p>
 						<h3>
-							<img src="images/suncorp_logo.png" class="brandLogo" />
+							<img src="images/suncorp_logo.png" class="sunLogo" />
 							Suncorp Group
 						</h3>
 						<p style="margin-bottom:1em"><em>Personal, Business, Life Insurance, Superannuation &amp; Banking</em></p>
@@ -101,16 +101,98 @@
 
 				<section>
 					<h2>Limitations of standard<br><code>&lt;table&gt;</code> markup</h2>
-
 					<p>
-						Not as accessible as you might think
 						<ul>
-							<li>No way to make a screen reader read verticaly down columns</li>
-							<li><code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> and <code>scope</code> don't really help at all</li>
+							<li>Not as accessible as you might think</li>
+							<ul>
+								<li>No way to make a screen reader read vertically down columns</li>
+								<li><code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> and <code>scope</code> don't seem to <em>do</em> anything</li>
+							</ul>
+							<li>Collapsing responsively by 'columns' is harder than ruling 7 kingdoms</li>
 						</ul>
 					</p>
-					<p>Collapsing responsively by 'columns' is harder than ruling 7 kingdoms</p>
+					<p>
+						<a href="http://codepen.io/davidelrizzo/pen/dGBpZK?editors=1000" target="_blank">Example 'Best Practice' table</a>
+					</p>
 				</section>
+
+				<section>
+					<h2>How <em>not to</em> build a responsive table</h2>
+
+					<ol>
+						<li>
+							Generate a second responsive table and toggle on breakpoint <br>
+							<div class="fragment roll-in flat-highlight">
+								<strong>CONS</strong>: Code duplication/bloat. Will duplicate unique IDs inside a table
+							</div>
+						</li>
+						<li>
+							Rearrange the table with JS on breakpoint<br>
+							<div class="fragment roll-in flat-highlight">
+								<strong>CONS</strong>: Requires JS &amp; screen events, Must re-initialize contents on change
+							</div>
+						</li>
+						<li>
+							Switch from <code>&lt;table&gt;</code> to <code>display:flex</code> <br>
+							<div class="fragment roll-in flat-highlight">
+								<strong>CONS</strong>: Simply not possible to do vertical/horizontal &amp; collapse row/column with the same markup
+							</div>
+						</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Doing it right: <strong class="highlight">FLEXBOX!</strong></h2>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/eJwqzp?editors=1100"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/dGBxje?editors=1000"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/BjgXGg?editors=1100"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/GobVLe?editors=1100"></iframe>
+				</section>
+
+				<section>
+					<h3>Now we can collapsing to Tabs or Accordions</h3>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/qbeWWK?editors=1010"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/PZMYWw?editors=0100"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/LGwPeq?editors=0100"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/BjXBrz?editors=0110"></iframe>
+				</section>
+
+				<section>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/gPVbYe?editors=0100"></iframe>
+					<p>LIMITATION: There is no way to do rowspans on a flex table :(</p>
+				</section>
+
+				<section>
+					<p>So flexy.. use it with any type of markup</p>
+					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/VeoeqB?editors=1000"></iframe>
+				</section>
+
+				<section>
+					<h3>That guy we love to hate (IE)</h3>
+					Only IE9 and below does not support flex. These old browsers will simply see the mobile version (graceful degradation FTW)
+				</section>
+
+
+
+
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
@@ -119,8 +201,6 @@
 						<small><a class="lightText" href="http://twitter.com/davidelrizzo" target="_blank">@davidelrizzo</a></small>
 					</p>
 				</section>
-
-				
 
 			</div>
 
@@ -138,6 +218,8 @@
 				progress: true,
 				history: true,
 				center: true,
+				//viewDistance: 3,
+				//showNotes: true,
 
 				//parallaxBackgroundImage: 'images/backgrounds/31385_game_of_thrones.jpg',
     		//parallaxBackgroundSize: '1920px 1200px',
@@ -147,14 +229,18 @@
 				// Optional reveal.js plugins
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					//{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					//{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					//{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					//{ src: 'plugin/zoom-js/zoom.js', async: true },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 
+		</script>
+
+		<script>
+			
 		</script>
 
 	</body>
