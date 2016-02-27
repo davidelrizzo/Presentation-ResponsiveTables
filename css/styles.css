@@ -1,8 +1,6 @@
 /* Custom CSS Styles for Reveal Presentation
  *********************************************/
 
-/* BASICS */
-
 .reveal:after {
 	  content: "";
 	 	background: url('../images/backgrounds/Game-of-Thrones-Wallpaper-1080p.jpg') no-repeat center center fixed;
@@ -48,6 +46,13 @@
 
 
 /* CUSTOM */
+
+/* BASICS */
+.reveal .sectionSmallerWrapper {
+	max-width: 930px;
+	margin: 0 auto;
+}
+
 .reveal .muted { color: rgba(255,255,255,0.5) }
 /*color: rgba(231,173,82,0.6)*/
 .reveal .highlight {
@@ -80,12 +85,65 @@
   border-radius: 10%;
 }
 
-.reveal .overlay-container {
+.reveal .comparisonContainer {
 	position: relative;
+	/*border: solid red 3px;*/
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.reveal .overlay {
+.reveal .comparisonImage {
+	margin: 0;
+	border: none;
+	display: none;
+	box-shadow: 5px 5px 30px 5px black
+}
+.reveal .comparisonImage.current-fragment {
+	display: block;
+	
+}
+
+.reveal .tableAnimationContainer {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100% !important;
+}
+.reveal .tableAnimation {
+	padding: 0 30px 30px;
+}
+.reveal .tableAnimation * { box-sizing: border-box }
+.reveal .tableAnimation h2 {
+	font-size: 18px;
+}
+.reveal .tableAnimation .cell {
+	font-size: 18px;
+	font-family: sans-serif;
+	/*font-weight: bold;*/
+	max-height: 40px;
+}
+
+.JofContainer {
+	position: relative;
+}
+.reveal .JofOverlay {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 45px;
+  left: 490px;
+	width: 100px;
+	height: 100px;
+	background: none;
+	border: none;
+}
+
+.reveal .blurb {
+	font-style: italic;
+	font-weight: normal;
+	text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	font-size: 1.8em;
 }

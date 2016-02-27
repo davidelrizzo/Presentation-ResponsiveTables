@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/tableAnimation.css">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -77,130 +78,252 @@
 					</p>
 				</section>
 
-				<section data-transition="fade-out slide "> 
-					<h2>Comparison Tables</h2>
-					<div class="stretch overlay-container">
-						<img class="fragment fade-in overlay" src="images/comparison/Big-Cartel.png">
-						<img class="fragment fade-in overlay" src="images/comparison/crazyegg.png">
-						<img class="fragment fade-in overlay" src="images/comparison/fetchapp.jpg">
-						<img class="fragment fade-in overlay" src="images/comparison/formspring.png">
-						<img class="fragment fade-in overlay" src="images/comparison/zen.png">
+				<section data-background="images/gifs/borrowadollar-1433860101.gif"></section>
+
+				<section style="text-align:center;"> 
+					<h2>Content &amp; Comparison Tables</h2>
+					<div class="comparisonContainer">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/Big-Cartel.png" width="495" height="413">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/crazyegg.png" width="500" height="278">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/fetchapp.jpg" width="500" height="300">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/formspring.png" width="500" height="498">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/Simplified-Building-Concepts.png" width="496" height="426">
+						<img class="fragment fade-in comparisonImage" src="images/comparison/zen.png" width="500" height="452">
 					</div>
 				</section>
 
 				<section>
-					<h2>'Responsive tables' as a flexible reusable component</h2>
-					<ol>
+					<h2 style="margin-bottom:50px;">'Responsive tables' as a<br>flexible reusable component</h2>
+					<!-- <ol>
 						<li class="fragment roll-in">Being responsive must be optional</li>
 						<li class="fragment roll-in">Vertical scrollbars is a valid option</li>
 						<li class="fragment roll-in">Collapse by rows if content is arranged horizontally</li>
 						<li class="fragment roll-in">Collapse by columns if content is arranged vertically</li>
 						<li class="fragment roll-in">Collapse to tabs or accordions</li>
-					</ol>
+					</ol> -->
+					<div class="tableAnimationContainer">
+
+						<div class="tableAnimation" id="squish">
+						  <h2>Squish</h2>
+						  <div class="page">
+						    <div class="table">
+						      <div class="cell">1</div>
+						      <div class="cell">2</div>
+						      <div class="cell">3</div>
+						      <div class="cell">4</div>
+						      <div class="cell">5</div>
+						      <div class="cell">6</div>
+						      <div class="cell">7</div>
+						      <div class="cell">8</div>
+						      <div class="cell">9</div>
+						    </div>
+						  </div>
+						</div>
+
+						<div class="tableAnimation" id="scroll">
+						  <h2>Scroll</h2>
+						  <div class="page">
+						      <div class="table">
+						        <div class="cell">1</div>
+						        <div class="cell">2</div>
+						        <div class="cell">3</div>
+						        <div class="cell">4</div>
+						        <div class="cell">5</div>
+						        <div class="cell">6</div>
+						        <div class="cell">7</div>
+						        <div class="cell">8</div>
+						        <div class="cell">9</div>
+						    </div>
+						    <div class="scrollbar"></div>
+						  </div>
+						</div>
+
+						<div class="tableAnimation" id="rows">
+						  <h2>Collapse rows</h2>
+						  <div class="page">
+						    <div class="table">
+						      <div class="cell">1</div>
+						      <div class="cell">2</div>
+						      <div class="cell">3</div>
+						      <div class="cell">4</div>
+						      <div class="cell">5</div>
+						      <div class="cell">6</div>
+						      <div class="cell">7</div>
+						      <div class="cell">8</div>
+						      <div class="cell">9</div>
+						    </div>
+						  </div>
+						</div>
+
+						<div class="tableAnimation" id="columns">
+						  <h2>Collapse columns</h2>
+						  <div class="page">
+						    <div class="table">
+						      <div class="cell">1</div>
+						      <div class="cell">2</div>
+						      <div class="cell">3</div>
+						      <div class="cell">4</div>
+						      <div class="cell">5</div>
+						      <div class="cell">6</div>
+						      <div class="cell">7</div>
+						      <div class="cell">8</div>
+						      <div class="cell">9</div>
+						    </div>
+						  </div>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="images/gifs/suddenlyrealize-1433860139.gif">
+					<h2 class="blurb">Ok.. that sounds good <br>lets look into that</h2>
 				</section>
 
 				<section>
-					<h2>Limitations of standard<br><code>&lt;table&gt;</code> markup</h2>
-					<p>
-						<ul>
-							<li>Not as accessible as you might think</li>
+					<div class="sectionSmallerWrapper">
+						<h2>Limitations of standard<br><code>&lt;table&gt;</code> markup</h2>
+						<p>
 							<ul>
-								<li>No way to make a screen reader read vertically down columns</li>
-								<li><code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> and <code>scope</code> don't seem to <em>do</em> anything</li>
+								<li>Not as accessible as you might think</li>
+								<ul>
+									<li>No way to make a screen reader read vertically down columns</li>
+									<li><code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code> and <code>scope</code> don't seem to make a screen reader do anything special at all.</li>
+								</ul>
+								<li>Collapsing responsively by 'columns' is a nightmare</li>
 							</ul>
-							<li>Collapsing responsively by 'columns' is harder than ruling 7 kingdoms</li>
-						</ul>
-					</p>
-					<p>
-						<a href="http://codepen.io/davidelrizzo/pen/dGBpZK?editors=1000" target="_blank">Example 'Best Practice' table</a>
-					</p>
+						</p>
+						<p>
+							<a href="http://s.codepen.io/davidelrizzo/debug/dGBpZK" target="_blank">Example 'Best Practice' table</a>
+						</p>
+					</div>
+				</section>
+
+				<section data-background="images/gifs/jon-snow-sad-1433863881.gif">
+					<h2 class="blurb">Well that's worrying</h2>
 				</section>
 
 				<section>
-					<h2>How <em>not to</em> build a responsive table</h2>
+					<div class="sectionSmallerWrapper">
+						<h2>How <em>not to</em> build a responsive table</h2>
 
-					<ol>
-						<li>
-							Generate a second responsive table and toggle on breakpoint <br>
-							<div class="fragment roll-in flat-highlight">
-								<strong>CONS</strong>: Code duplication/bloat. Will duplicate unique IDs inside a table
-							</div>
-						</li>
-						<li>
-							Rearrange the table with JS on breakpoint<br>
-							<div class="fragment roll-in flat-highlight">
-								<strong>CONS</strong>: Requires JS &amp; screen events, Must re-initialize contents on change
-							</div>
-						</li>
-						<li>
-							Switch from <code>&lt;table&gt;</code> to <code>display:flex</code> <br>
-							<div class="fragment roll-in flat-highlight">
-								<strong>CONS</strong>: Simply not possible to do vertical/horizontal &amp; collapse row/column with the same markup
-							</div>
-						</li>
-					</ol>
+						<ol>
+							<li>
+								Generate a second responsive table and toggle on breakpoint <br>
+								<div class="fragment roll-in flat-highlight">
+									<strong>CONS</strong>: Code duplication/bloat. Will duplicate unique IDs inside a table
+								</div>
+							</li>
+							<li>
+								Rearrange the table with JS on breakpoint<br>
+								<div class="fragment roll-in flat-highlight">
+									<strong>CONS</strong>: Requires JS &amp; screen events, Must re-initialize contents on change
+								</div>
+							</li>
+							<li>
+								Switch from <code>&lt;table&gt;</code> to <code>display:flex</code> <br>
+								<div class="fragment roll-in flat-highlight">
+									<strong>CONS</strong>: Simply not possible to do vertical/horizontal &amp; collapse row/column with the same markup
+								</div>
+							</li>
+						</ol>
+					</div>
+				</section>
+
+				<section data-background="images/gifs/seeaspider-1433860136.gif">
+					<h2 class="blurb">Wait.. don't despair yet!</h2>
 				</section>
 
 				<section>
 					<h2>Doing it right: <strong class="highlight">FLEXBOX!</strong></h2>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/eJwqzp?editors=1100"></iframe>
+					<!-- Row table -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/eJwqzp?editors=1100"></iframe>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/dGBxje?editors=1000"></iframe>
+					<!-- Column table -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/dGBxje?editors=1000"></iframe>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/BjgXGg?editors=1100"></iframe>
+					<!-- Cell styling -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/BjgXGg?editors=1100"></iframe>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/GobVLe?editors=1100"></iframe>
+					<!-- Responsive Collapse -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/GobVLe?editors=1100"></iframe>
+				</section>
+
+				<section data-background="images/gifs/makeup-1433860119.gif">
+					<h2 class="blurb">It changes!</h2>
 				</section>
 
 				<section>
 					<h3>Now we can collapsing to Tabs or Accordions</h3>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/qbeWWK?editors=1010"></iframe>
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/qbeWWK?editors=1010"></iframe>
+				</section>
+
+				<section data-background="images/gifs/test-1433860144.gif">
+					<!-- <h2 class="blurb"></h2> -->
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/PZMYWw?editors=0100"></iframe>
+					<!-- Content alignment -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/PZMYWw?editors=0100"></iframe>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/LGwPeq?editors=0100"></iframe>
+					<!-- Column margins -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/LGwPeq?editors=0100"></iframe>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/BjXBrz?editors=0110"></iframe>
+					<!-- Zebra Striping -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/BjXBrz?editors=0110"></iframe>
+				</section>
+
+				<section data-background="images/gifs/lastslice-1433860112.gif">
+					<h2 class="blurb">A little painful,<br> but we'll stomach it</h2>
 				</section>
 
 				<section>
-					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/gPVbYe?editors=0100"></iframe>
-					<p>LIMITATION: There is no way to do rowspans on a flex table :(</p>
+					<!-- Column spans -->
+					<iframe class="stretch" data-src="http://codepen.io/davidelrizzo/pres/gPVbYe?editors=0100"></iframe>
+					<p class="highlight">LIMITATION: 'rowspans' are not possible on a flex table like this</p>
 				</section>
 
+				<section data-background="images/gifs/hodor-1433863874.gif"></section>
+
 				<section>
-					<p>So flexy.. use it with any type of markup</p>
+					<p><h3>So flexy... use it with any type of markup!</h3></p>
 					<iframe class="stretch" src="http://codepen.io/davidelrizzo/pres/VeoeqB?editors=1000"></iframe>
 				</section>
 
+				<section data-background="images/gifs/morewine-1433865375.gif"></section>
+
 				<section>
-					<h3>That guy we love to hate (IE)</h3>
-					Only IE9 and below does not support flex. These old browsers will simply see the mobile version (graceful degradation FTW)
+					<h3>That guy we love to hate</h3>
+					<p>
+						IE9 and below does not support flex.<br>
+						These old browsers will simply see the mobile version
+					</p>
+					<div class="JofContainer">
+						<img class="stretch" src="images/gifs/getsit-1433860110.gif">
+						<img class="JofOverlay" src="images/ie-logo.png">
+					</div>
+					<p>Graceful degradation FTW!</p>
 				</section>
 
 
-
-
-
-				<section style="text-align: left;">
+				<section style="text-align: left;" data-background="">
 					<h1>THE END</h1>
 					<h4 class="xlightText" style="margin-top:40px;">Thank You</h4>
 					<p class="xlightText" style="margin-top:-20px;">
 						<small><a class="lightText" href="http://twitter.com/davidelrizzo" target="_blank">@davidelrizzo</a></small>
 					</p>
+					<!-- <img class="stretch" src="images/gifs/morewine-1433865375.gif"> -->
 				</section>
+
+				<section data-background="images/gifs/sausage-1433860124.gif"></section>
 
 			</div>
 
@@ -218,6 +341,9 @@
 				progress: true,
 				history: true,
 				center: true,
+				width: 1300,
+				minScale: 0.2,
+    		maxScale: 1.5,
 				//viewDistance: 3,
 				//showNotes: true,
 
