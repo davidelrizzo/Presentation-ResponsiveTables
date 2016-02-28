@@ -88,24 +88,34 @@
 .reveal .comparisonContainer {
 	position: relative;
 	/*border: solid red 3px;*/
-	width: 500px;
-	height: 500px;
+	width: 1200px;
+	height: 600px;
 	margin: 0 auto;
 	display: flex;
   justify-content: center;
   align-items: center;
+  /*outline: solid 1px cyan;*/
 }
 
 .reveal .comparisonImage {
+	position: relative;
 	margin: 0;
 	border: none;
-	display: none;
 	box-shadow: 5px 5px 30px 5px black
 }
-.reveal .comparisonImage.current-fragment {
-	display: block;
-	
+.reveal .comparisonImage {
+	position: absolute;
+	top: 0; left: 0;
+	transform-origin: 0;
+	box-shadow: 5px 5px 30px 5px black;
 }
+.reveal .comparisonImage1 { transform:scale(0.8); left:65px; top:60px; z-index:10;}
+/*.reveal .comparisonImage2 { transform:scale(1); left:0px; top:0px; }*/
+.reveal .comparisonImage3 { transform: scale(0.80); left:auto; top:0px; right:0; transform-origin:100% 0; }
+.reveal .comparisonImage4 { transform:scale(1); left:10px; top:10px; }
+.reveal .comparisonImage5 { transform:scale(1); left:413px; top:239px; z-index:5; }
+.reveal .comparisonImage6 { transform:scale(1); left:auto; top:auto; right:89px; bottom:19px; }
+.reveal .comparisonImage7 { transform: scale(0.8); left:37%; top:11px; z-index:4; }
 
 .reveal .tableAnimationContainer {
 	display: flex;
