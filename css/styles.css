@@ -5,7 +5,7 @@
 	  content: "";
 	 	background: url('../images/backgrounds/Game-of-Thrones-Wallpaper-1080p.jpg') no-repeat center center fixed;
 	 	background-size: cover;
-	  opacity: 0.2;
+	  opacity: 0.3;
 	  top: 0;
 	  left: 0;
 	  bottom: 0;
@@ -53,16 +53,16 @@
 	margin: 0 auto;
 }
 
-.reveal .muted { color: rgba(255,255,255,0.5) }
+.reveal .muted { color: rgba(255,255,255,0.6) }
 /*color: rgba(231,173,82,0.6)*/
 .reveal .highlight {
-  color: #664e1a;
+  color: #CAA556;
   /*font-style: italic;
   opacity: 0.7;
 */}
 .reveal .flat-highlight {
-  color: #664e1a;
-  opacity: 0.7;
+  color: #CAA556;
+  opacity: 0.85;
 }
 
 .reveal .barList {
